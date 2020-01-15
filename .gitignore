@@ -13,3 +13,4 @@ database/*.sqlite
 .idea
 yarn.lock
 package-lock.json
+public/docs

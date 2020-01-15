@@ -40,7 +40,7 @@ module.exports = {
             write: 'Grants write access (this is just sample)',
             admin: 'Grants read and write access to administrative information (this is just sample)'
           }
-        }
+        },
       }
     },
 
