@@ -19,7 +19,8 @@ const providers = [
   '@adonisjs/mail/providers/MailProvider',
   '@adonisjs/validator/providers/ValidatorProvider',
   '@adonisjs/vow/providers/VowProvider',
-  'adonis-acl/providers/AclProvider'
+  'adonis-acl/providers/AclProvider',
+  'adonis-swagger/providers/SwaggerProvider'
 ]
 
 /*

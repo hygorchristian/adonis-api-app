@@ -1,0 +1,155 @@
+/ongs:
+  post:
+    tags:
+      - Ong
+    description: Create ong
+    produces:
+      - application/json
+    parameters:
+      - name: slug
+        description: slug
+        in: json
+        required: true
+        type: string
+      - name: name
+        description: name
+        in: json
+        required: true
+        type: string
+      - name: description
+        description: description
+        in: json
+        required: true
+        type: text
+      - name: birth
+        description: birth
+        in: json
+        required: true
+        type: date
+    responses:
+      200:
+        description: Created
+        schema:
+          $ref: "#/definitions/Ong"
+      400:
+        description: Invalid input
+      500:
+        description: Internal error
+  get:
+    tags:
+      - Ong
+    description: List all ongs
+    produces:
+      - application/json
+    parameters:
+      - name: page
+        description: Page offset
+        in: query
+        type: integer
+      - name: perPage
+        description: Items per page
+        in: query
+        type: integer
+      - name: sort
+        description: Field to sort list
+        in: query
+        type: string
+      - name: order
+        description: Order (ASC | DESC)
+        in: query
+        type: string
+    responses:
+      200:
+        description: Created
+        schema:
+          $ref: "#/definitions/OngItems"
+      400:
+        description: Invalid input
+      500:
+        description: Internal error
+/ongs/{ong_id}:
+  get:
+    tags:
+      - Ong
+    description: Get ong info
+    produces:
+      - application/json
+    parameters:
+      - name: ong_id
+        in: path
+        description: ID of Ong
+        required: true
+        type: integer
+    responses:
+      200:
+        description: Created
+        schema:
+          $ref: "#/definitions/Ong"
+      400:
+        description: Invalid input
+      500:
+        description: Internal error
+  put:
+    tags:
+      - Ong
+    description: Update ong info
+    produces:
+      - application/json
+    parameters:
+      - name: ong_id
+        in: path
+        description: ID of Ong
+        required: true
+        type: integer 
+      - name: slug
+        description: slug
+        in: json
+        required: true
+        type: string
+      - name: name
+        description: name
+        in: json
+        required: true
+        type: string
+      - name: description
+        description: description
+        in: json
+        required: true
+        type: text
+      - name: birth
+        description: birth
+        in: json
+        required: true
+        type: date
+    responses:
+      200:
+        description: Created
+        schema:
+          $ref: "#/definitions/Ong"
+      400:
+        description: Invalid input
+      500:
+        description: Internal error
+  delete:
+    tags:
+      - Ong
+    description: Update ong info
+    produces:
+      - application/json
+    parameters:
+      - name: ong_id
+        in: path
+        description: ID of Ong
+        required: true
+        type: integer
+    responses:
+      204:
+        description: Deleted
+      400:
+        description: Invalid input
+      401:
+        description: Unauthorized
+      403:
+        description: Forbidden
+      500:
+        description: Internal error

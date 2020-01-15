@@ -28,6 +28,7 @@
     "@adonisjs/validator": "^5.0.6",
     "@adonisjs/vow": "^1.0.17",
     "adonis-acl": "^1.1.1",
+    "adonis-swagger": "^1.2.9",
     "require-dir": "^1.2.0",
     "sqlite3": "^4.1.1"
   },

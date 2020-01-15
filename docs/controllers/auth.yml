@@ -1,0 +1,42 @@
+/auth:
+  post:
+    tags:
+      - "Auth"
+    description: Login to the application
+    produces:
+      - application/json
+    parameters:
+      - name: email
+        description: Email to use for login.
+        in: json
+        required: true
+        type: string
+      - name: password
+        description: User's password.
+        in: json
+        required: true
+        type: string
+    responses:
+      200:
+        description: "Login success"
+        schema:
+          $ref: "#/definitions/Auth"
+      400:
+        description: "Invalid input"
+      500:
+        description: "Internal error"
+  delete:
+    tags:
+      - "Auth"
+    description: "Logout from application"
+    produces:
+      - application/json
+    responses:
+      204:
+        description: "Logout success"
+        schema:
+          $ref: "#/definitions/Auth"
+      400:
+        description: "Invalid input"
+      500:
+        description: "Internal error"
